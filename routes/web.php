@@ -9,19 +9,11 @@ Route::get('/carrinho', function () {
     return view('carrinho');
 });
 Route::get('/catalogo', [WebsiteController::class, 'catalogo']);
-Route::get('/admin/produtos', [WebsiteController::class, 'catalogo']);
-Route::get('/checkout', function () {
-    return view('checkout');
-});
-Route::get('/contato', function () {
-    return view('contato');
-});
-Route::get('/produto', function () {
-    return view('produto');
-});
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/checkout', function () {return view('checkout');});
+Route::get('/contato', function () {return view('contato');});
+Route::get('/produto', function () {return view('produto');});
+Route::get('/welcome', function () {return view('welcome');});
+Route::get('/termos', function () {return view('termos');});
 
 // Adimin
 

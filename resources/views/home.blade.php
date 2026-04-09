@@ -31,7 +31,7 @@
         <div class="grid-4">
           @foreach ($produtos as $produto)
             <article class="card">
-              <img src="/assets/img/{{ $produto['image']}}" alt="{{ $produto['nome']}}">
+              <img src="/assets/img/product1.jpg" alt="{{ $produto['nome']}}">
 
               <div class="product-body">
                 <span class="tag">{{ $produto['categoria']}}</span>
@@ -45,7 +45,7 @@
                 </div>
               </div>
             </article>
-          @endforeach
+          @endforeach 
         </div>
       </div>
     </section>

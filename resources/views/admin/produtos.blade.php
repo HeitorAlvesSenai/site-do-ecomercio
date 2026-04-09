@@ -33,9 +33,7 @@
           <table class="table">
             <thead><tr><th>Produto</th><th>Categoria</th><th>Preco</th><th>Estoque</th></tr></thead>
             <tbody>
-              @foreach ($produtos as $produto)
-              <tr><td>{{ $produto['nome']}}</td><td>Moda</td><td>R$ 289,90</td><td>84</td></tr>
-              @endforeach
+              <tr><td>Tenis Urban</td><td>Moda</td><td>R$ 289,90</td><td>84</td></tr>
             </tbody>
           </table>
         </div> 
