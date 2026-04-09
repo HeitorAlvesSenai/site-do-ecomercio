@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin | Clientes</title>
-  <link rel="stylesheet" href="/assetsAdmin/css/style.css" />
-  <script defer src="/assetsAdmin/js/script.js"></script>
-</head>
-<body>
-  <div class="wrapper">
-    <aside class="sidebar">
-      <div class="logo"><span class="logo-badge">A</span><span>NovaShop Admin</span></div>
-      <nav class="menu">
-        <a href="/admin/">Dashboard</a>
-        <a href="/admin/produtos">Produtos</a>
-        <a href="/admin/pedidos">Pedidos</a>
-        <a class="active" href="/admin/clientes">Clientes</a>
-        <a href="/admin/configuracoes">Configuracoes</a>
-      </nav>
-    </aside>
-
+@extends('admin/index')
+@section('conteudo')
     <main class="content">
       <div class="top">
         <div><h1>Clientes</h1><p class="small">Base de compradores e relacionamento.</p></div>
@@ -43,6 +23,4 @@
         </table>
       </section>
     </main>
-  </div>
-</body>
-</html>
+@endsection
