@@ -1,56 +1,69 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Produto;
+use Illuminate\Http\Request;
+use Illuminate\Suport\Facades\Hash
+
 class WebsiteController extends Controller
 {
     //Listar todos os usuários
     public function home()
     {
-        $produtos = [
-        ["nome"=>"Xit","preco"=>1000000.00,"categoria"=>"Martado"],
-        ["nome"=>"Rafael","preco"=>155.00,"categoria"=>"César"],
-        ["nome"=>"Free Fire","preco"=>150.00,"categoria"=>"Martado"],
-        ["nome"=>"Naruto","preco"=>90.00,"categoria"=>"César"],
-        ["nome"=>"Papel de Parede do Naruto","preco"=>110.00,"categoria"=>"César"],
-        ["nome"=>"Celular Quebrado","preco"=>230.00,"categoria"=>"César"],
-        ["nome"=>"Conjunto Nike Azul","preco"=>150.00,"categoria"=>"Martado"],
-        ["nome"=>"Capa Bizarro","preco"=>-100.00,"categoria"=>"???"],
-        ["nome"=>"Felca Africano","preco"=>5000.00,"categoria"=>"César"],
-        ["nome"=>"Mano Escrito","preco"=>1000.00,"categoria"=>"César"],
-        ["nome"=>"Google Creme","preco"=>34000000000.00,"categoria"=>"César"],
-        ["nome"=>"MacDonold","preco"=>2500000.00,"categoria"=>"César"],
-        ["nome"=>"Cruzeiro","preco"=>1300000000.00,"categoria"=>"César"]
-        ];
-
+        $produtos = Produto::get();
         return view("home",compact("produtos"));
     }
 
-    public function produtos()
+    public function produto()
     {
-        $produtos = array("Tenis","Bone","Camisa","Bermuda");
-
-        return view("produtos",compact("produtos"));
+        return view("produto");
     }
 
     public function catalogo()
     {
-        $produtos = [
-        ["nome"=>"Xit","preco"=>1000000.00,"categoria"=>"Martado"],
-        ["nome"=>"Rafael","preco"=>155.00,"categoria"=>"César"],
-        ["nome"=>"Free Fire","preco"=>150.00,"categoria"=>"Martado"],
-        ["nome"=>"Naruto","preco"=>90.00,"categoria"=>"César"],
-        ["nome"=>"Papel de Parede do Naruto","preco"=>110.00,"categoria"=>"César"],
-        ["nome"=>"Celular Quebrado","preco"=>230.00,"categoria"=>"César"],
-        ["nome"=>"Conjunto Nike Azul","preco"=>150.00,"categoria"=>"Martado"],
-        ["nome"=>"Capa Bizarro","preco"=>-100.00,"categoria"=>"???"],
-        ["nome"=>"Felca Africano","preco"=>5000.00,"categoria"=>"César"],
-        ["nome"=>"Mano Escrito","preco"=>1000.00,"categoria"=>"César"],
-        ["nome"=>"Google Creme","preco"=>34000000000.00,"categoria"=>"César"],
-        ["nome"=>"MacDonold","preco"=>2500000.00,"categoria"=>"César"],
-        ["nome"=>"Cruzeiro","preco"=>1300000000.00,"categoria"=>"César"]
-        ];
-
+        $produtos = Produto::get();
         return view("catalogo",compact("produtos"));
+    }
+    public function carrinho()
+    {
+        return view("carrinho");
+    }
+    public function cadastro()
+    {
+        return view("cadastro");
+    }
+    public function checkout()
+    {
+        return view("checkout");
+    }
+    public function contato()
+    {
+        return view("contato");
+    }
+    public function index()
+    {
+        return view("index");
+    }
+    public function termos()
+    {
+        return view("termos");
+    }
+
+    public function cadastroCliente(Request $request)
+    {
+        if ($request->input('senha') != $request->input('confirmar_senha')){
+            return view("cadastro")['error'->'Erro: As senhas não coincidem.'];
+        }
+        $cl = new Cliente();
+        $cl->nome = $request->input('nome');
+        $cl->email = $request->input('email');
+        $cl->senha = Hash::make($request->input('senha'));
+        $cl->save();
+        return view("cadastro");
+    }
+    public function logarCliente(Request $request)
+    {
+        if 
     }
 }
 ?>

@@ -29,23 +29,22 @@
         </div>
 
         <div class="grid-4">
+          @if(count($produtos) == 0)
+          <p>Nenhum produto cadastrado</p>
+          @else
           @foreach ($produtos as $produto)
             <article class="card">
               <img src="/assets/img/product1.jpg" alt="{{ $produto['nome']}}">
 
               <div class="product-body">
-                <span class="tag">{{ $produto['categoria']}}</span>
-                <h3>{{ $produto['nome'] }}</h3>
-                <div class="price" data-price="{{ $produto['preco'] }}">
-                    R$ {{ number_format($produto['preco'], 2, ',', '.') }}
-                </div>
-                <div class="meta">
-                  <span>Pronta entrega</span>
-                  <a href="produto">Ver detalhes</a>
-                </div>
+                <span class="tag">Moda urbana</span>
+                <h3>{{$p -> nome}}</h3>
+                <div class="price" data-price="{{$p->preco}}"></div>
+                <div class="meta"><span>4.9 estrelas</span><span>12x sem juros</span></div>
               </div>
             </article>
-          @endforeach 
+          @endforeach
+          @endif
         </div>
       </div>
     </section>

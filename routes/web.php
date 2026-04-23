@@ -13,6 +13,8 @@ Route::get('/contato', function () {return view('contato');});
 Route::get('/produto', function () {return view('produto');});
 Route::get('/welcome', function () {return view('welcome');});
 Route::get('/termos', function () {return view('termos');});
+Route::get('/cadastro', function () {return view('cadastro');});
+Route::get('/cadastrar', function () {return view('cadastroCliente');});
 
 // Adimin
 

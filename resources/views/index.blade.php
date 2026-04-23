@@ -18,6 +18,7 @@
         <a href="checkout">Checkout</a>
         <a href="contato">Contato</a>
         <a href="termos">Termos de uso</a>
+        <a href="cadastro">Cadastro</a>
       </nav>
       <div class="nav-actions">
         <a class="btn btn-light" href="carrinho">Meu carrinho</a>
